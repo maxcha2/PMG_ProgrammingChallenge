@@ -11,8 +11,7 @@ def main():
         filename = csv_name[11:]                                    #formats the csv name
         next_file.insert(loc=2, column="filename", value=filename)  #add filename to dataframe
         combined = pd.concat([combined, next_file])                 #concat nextfile to the combined dataframe
-    combined = combined.reset_index()                               #resets the index
-    combined.to_csv("combined.csv")                                 #outputs dataframe to csv
+    combined.to_csv("combined.csv", index=False)                    #outputs dataframe to csv
     
 if __name__ == '__main__':
     main()
